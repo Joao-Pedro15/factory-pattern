@@ -3,8 +3,10 @@ class UserService {
     this.repository = repository
   }
 
-  async findOne(id) {
-    const user = await this.repository.findOne(id)
-    return user
+  async find(id) {
+    const users = await this.repository.find(id)
+    return users.map(user => ({ ...user, name: user.name.toUpperCase() }))
   }
 }
+
+module.exports = UserService

@@ -3,7 +3,9 @@ class UserRepository {
     this.dbConnection = dbConnection
   }
 
-  async findOne(id){
-    return this.dbConnection.findOne(id)
+  async find(id){
+    return this.dbConnection.find(id)
   }
 }
+
+module.exports = UserRepository 
